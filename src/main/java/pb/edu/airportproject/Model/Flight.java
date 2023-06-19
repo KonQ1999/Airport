@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 
 @Setter
@@ -18,15 +19,12 @@ public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long flyCode;
-
     public String cityFrom;
     public String cityTo;
     public LocalDateTime departureDate;
     public int seatsNumber;
 
-    public Flight() {
-
-    }
+    public Flight() {}
 
     public Flight(Long flyCode, String cityFrom, String cityTo, LocalDateTime departureDate, int seatsNumber) {
         this.flyCode = flyCode;

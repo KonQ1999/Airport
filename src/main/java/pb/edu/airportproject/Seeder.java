@@ -20,7 +20,7 @@ public class Seeder implements CommandLineRunner {
     @Override
     public void run(String... args) {
         deleteAllFromRepository(flightRepository);
-        Flight flight1 = new Flight(1l, "Białystok", "Warszawa",  LocalDateTime.now(), 100);
+        Flight flight1 = new Flight(1l, "Białystok", "Warszawa",  LocalDateTime.now(), 4);
         Flight flight2 = new Flight(2l, "Białystok", "Kielce",  LocalDateTime.now(), 100);
         Flight flight3 = new Flight(3l, "Białystok", "Lublin",  LocalDateTime.now(), 100);
         Flight flight4 = new Flight(4l, "Madryt", "Bialystok",  LocalDateTime.now(), 100);
@@ -31,7 +31,6 @@ public class Seeder implements CommandLineRunner {
         flightRepository.save(flight3);
         flightRepository.save(flight4);
         flightRepository.save(flight5);
-
     }
 
 

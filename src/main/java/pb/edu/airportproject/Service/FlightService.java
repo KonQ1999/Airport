@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import pb.edu.airportproject.Model.Flight;
 import pb.edu.airportproject.Repository.FlightRepository;
 
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,6 +34,17 @@ public class FlightService {
 
         for (Flight flight: flights){
             if (flight.cityTo.equals(cityName)) foundFlights.add(flight);
+        }
+
+        return foundFlights;
+    }
+
+    public ArrayList<Flight> searchFlightFrom(String cityName) {
+        List<Flight> flights = flightRepository.findAll();
+        ArrayList<Flight> foundFlights = new ArrayList();
+
+        for (Flight flight: flights){
+            if (flight.cityFrom.equals(cityName)) foundFlights.add(flight);
         }
 
         return foundFlights;

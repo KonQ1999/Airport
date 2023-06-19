@@ -22,38 +22,37 @@ public class FlightController {
         return flightService.getAllFlights();
     }
 
-//    @RequestMapping("/{id}")
-//    public Flight getFlight(@PathVariable Long id) {
-//        return flightService.getFlight(id);
-//    }
-
-
-    @GetMapping("/{cityName}")
+    @GetMapping("flightsTo/{cityName}")
     public ArrayList<Flight> searchFlightTo(@PathVariable String cityName) {
         return flightService.searchFlightTo(cityName);
     }
 
-//    @RequestMapping("/{cityName}")
-//    public Flight searchFlightFrom(@PathVariable String cityName) {
-//        return flightService.searchFlightTo(cityName);
+    @GetMapping("flightsFrom/{cityName}")
+    public ArrayList<Flight> searchFlightFrom(@PathVariable String cityName) {
+        return flightService.searchFlightFrom(cityName);
+    }
+
+
+
+
+    //Nie uzywane
+        //    @RequestMapping("/{id}")
+//    public Flight getFlight(@PathVariable Long id) {
+//        return flightService.getFlight(id);
 //    }
 
-
-
-    @RequestMapping(method= RequestMethod.POST, value="")
+        @RequestMapping(method= RequestMethod.POST, value="")
     public void addFlight(@RequestBody Flight flight) {
         flightService.addFlight(flight);
     }
 
     @RequestMapping(method=RequestMethod.PUT, value="/{id}")
-    public void updateTopic(@RequestBody Flight topic, @PathVariable String id) {
+    public void updateFlight(@RequestBody Flight topic, @PathVariable String id) {
         flightService.updateFlight(id, topic);
     }
 
     @RequestMapping(method= RequestMethod.DELETE, value="/{id}")
-    public void delTopic(@PathVariable Long id) {
+    public void delFlight(@PathVariable Long id) {
         flightService.delFlight(id);
     }
-
-
 }
