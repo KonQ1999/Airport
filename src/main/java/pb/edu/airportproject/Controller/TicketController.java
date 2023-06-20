@@ -1,12 +1,9 @@
 package pb.edu.airportproject.Controller;
 
 import org.springframework.web.bind.annotation.*;
-import pb.edu.airportproject.Model.Flight;
 import pb.edu.airportproject.Model.Ticket;
-import pb.edu.airportproject.Service.FlightService;
 import pb.edu.airportproject.Service.TicketService;
 
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 

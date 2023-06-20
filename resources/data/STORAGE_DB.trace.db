@@ -1156,3 +1156,72 @@ The object is already closed [90007-214]
 2023-06-20 02:35:32 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
 The object is already closed [90007-214]
+2023-06-20 03:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:00:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:01:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:01:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:01:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:01:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:01:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:13 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:15 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:17 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]
+2023-06-20 03:02:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: Obiekt jest zamknięty
+The object is already closed [90007-214]

@@ -2,7 +2,9 @@ package pb.edu.airportproject.Service;
 
 import org.springframework.stereotype.Service;
 import pb.edu.airportproject.Model.Flight;
+import pb.edu.airportproject.Model.Ticket;
 import pb.edu.airportproject.Repository.FlightRepository;
+import pb.edu.airportproject.Repository.TicketRepository;
 
 import java.sql.SQLOutput;
 import java.util.ArrayList;
@@ -12,14 +14,25 @@ import java.util.List;
 public class FlightService {
 
     private final FlightRepository flightRepository;
+    private final TicketRepository ticketRepository;
 
-    public FlightService(FlightRepository flightRepository) {
+    public FlightService(FlightRepository flightRepository, TicketRepository ticketRepository) {
         this.flightRepository = flightRepository;
+        this.ticketRepository = ticketRepository;
     }
 
     public List<Flight> getAllFlights() {
-        List<Flight> flights = new ArrayList<>();
-        flightRepository.findAll().forEach(flights::add);
+        List<Flight> flights = flightRepository.findAll();
+        List<Ticket> tickets = ticketRepository.findAll();
+
+        for (Flight flight: flights) {
+            for (Ticket ticket : tickets) {
+                if (ticket.flightId.equals(flight.flyCode)) {
+                    flight.seatsNumber = flight.seatsNumber - 1;
+                }
+            }
+        }
+
         return flights;
     }
 

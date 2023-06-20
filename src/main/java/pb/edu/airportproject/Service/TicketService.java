@@ -82,7 +82,6 @@ public class TicketService {
         List<Flight> flights = flightRepository.findAll();
         List<Ticket> tickets = ticketRepository.findAll();
 
-
         for (Flight flight: flights) {
             if (flight.flyCode.equals(flightCode)) {
                 for (Ticket ticket : tickets) {

@@ -20,10 +20,11 @@ import java.text.SimpleDateFormat;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+
 public class PdfGenerator {
 
     private static final String PDF_FILE = "C:\\Giereczki\\PDF_List.pdf";
-//    private static final String PDF_FILE = "D:\\studia\\maGISTER\\Rozproszone_systemy_internetowe\\projekt\\moj\\RSI_PROJEKT_SOAP-master\\PDF_List.pdf";
+    //    private static final String PDF_FILE = "D:\\studia\\maGISTER\\Rozproszone_systemy_internetowe\\projekt\\moj\\RSI_PROJEKT_SOAP-master\\PDF_List.pdf";
 //    private static final String PDF_FILE2 = "D:\\studia\\maGISTER\\Rozproszone_systemy_internetowe\\projekt\\moj\\RSI_PROJEKT_SOAP-master\\PDF_Ticket.pdf";
     private static final String PDF_FILE2 = "C:\\Giereczki\\PDF_List2.pdf";
 
@@ -66,9 +67,7 @@ public class PdfGenerator {
                     .setBackgroundColor(new DeviceRgb(172, 185, 199))
                     .add(new Paragraph("Pozostałe miejsca")));
 
-
-
-            for (Flight flight: flights) {
+            for (Flight flight : flights) {
                 for (Ticket ticket : tickets) {
                     if (ticket.flightId.equals(flight.flyCode)) {
                         flight.seatsNumber = flight.seatsNumber - 1;
@@ -76,7 +75,7 @@ public class PdfGenerator {
                 }
             }
 
-            for (Flight flight: flights) {
+            for (Flight flight : flights) {
                 table.addCell(new Cell().add(new Paragraph(flight.getFlyCode().toString())));
                 table.addCell(new Cell().add(new Paragraph(flight.getCityFrom())));
                 table.addCell(new Cell().add(new Paragraph(flight.getCityTo())));
@@ -84,7 +83,6 @@ public class PdfGenerator {
                 table.addCell(new Cell().add(new Paragraph(String.valueOf(flight.departureDate.getDayOfMonth() + "-" + flight.departureDate.getMonthValue() + "-" + flight.departureDate.getYear()))));
                 table.addCell(new Cell().add(new Paragraph(Integer.toString(flight.seatsNumber))));
             }
-
 
             document.add(table);
             document.close();
@@ -95,7 +93,7 @@ public class PdfGenerator {
         }
     }
 
-    public File createPdfTicket(List<Flight> flights, List<Ticket> tickets , Long flyCode) throws IOException {
+    public File createPdfTicket(List<Flight> flights, List<Ticket> tickets, Long flyCode) throws IOException {
         try {
             PdfDocument pdf = new PdfDocument(new PdfWriter(PDF_FILE2));
 
@@ -131,12 +129,11 @@ public class PdfGenerator {
                         Ticket.TicketWithSeatNumber ticketWithFlight = new Ticket.TicketWithSeatNumber(flight, ticket.seatNumber);
                         userFlights.add(ticketWithFlight);
                     }
-                 }
+                }
             }
 
-
             for (Ticket.TicketWithSeatNumber ticketWithFlight : userFlights) {
-                if((ticketWithFlight.flight.getFlyCode()).equals(flyCode)){
+                if ((ticketWithFlight.flight.getFlyCode()).equals(flyCode)) {
                     table.addCell(new Cell().add(new Paragraph(ticketWithFlight.flight.getFlyCode().toString())));
                     table.addCell(new Cell().add(new Paragraph(ticketWithFlight.flight.getCityFrom())));
                     table.addCell(new Cell().add(new Paragraph(ticketWithFlight.flight.getCityTo())));
@@ -157,7 +154,7 @@ public class PdfGenerator {
     public byte[] convertFileToByteArray() throws FileNotFoundException, IOException {
         File file = new File(PDF_FILE);
         FileInputStream fis = new FileInputStream(file);
-        byte[] arr = new byte[(int)file.length()];
+        byte[] arr = new byte[(int) file.length()];
         fis.read(arr);
         fis.close();
         return arr;
