@@ -3,6 +3,7 @@ package pb.edu.airportproject.Controller;
 import org.springframework.web.bind.annotation.*;
 import pb.edu.airportproject.Model.Flight;
 import pb.edu.airportproject.Service.FlightService;
+import pb.edu.airportproject.Service.TicketService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +13,11 @@ import java.util.List;
 public class FlightController {
 
     public final FlightService flightService;
+    public final TicketService ticketService;
 
-    public FlightController(FlightService flightService) {
+    public FlightController(FlightService flightService, TicketService ticketService) {
         this.flightService = flightService;
+        this.ticketService = ticketService;
     }
 
     @GetMapping("")
@@ -33,13 +36,19 @@ public class FlightController {
     }
 
 
+    @GetMapping("pdf")
+    public void generateFlightsPDF() {
+        ticketService.generateFlightsPDF();
+    }
 
 
-    //Nie uzywane
-        //    @RequestMapping("/{id}")
-//    public Flight getFlight(@PathVariable Long id) {
-//        return flightService.getFlight(id);
-//    }
+
+
+
+    @RequestMapping("/{id}")
+    public Flight getFlight(@PathVariable Long id) {
+       return flightService.getFlight(id);
+    }
 
         @RequestMapping(method= RequestMethod.POST, value="")
     public void addFlight(@RequestBody Flight flight) {

@@ -6,6 +6,8 @@ import pb.edu.airportproject.Model.Ticket;
 import pb.edu.airportproject.Service.FlightService;
 import pb.edu.airportproject.Service.TicketService;
 
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.List;
 
 
@@ -23,10 +25,20 @@ public class TicketController {
     public List<Ticket> getAllTickets() {
         return ticketService.getAllTickets();
     }
-    @PostMapping("/{flightId}")
-    public int buyTicket(@PathVariable Long flightId) {
-        return ticketService.bookTicket(flightId);
+    @PostMapping("{flightCode}")
+    public int buyTicket(@PathVariable Long flightCode) {
+        return ticketService.bookTicket(flightCode);
     }
 
+
+    @GetMapping("pdf/{flightCode}")
+    public void generateTicketPDF(@PathVariable Long flightCode) throws IOException {
+        ticketService.generateTicketPDF(flightCode);
+    }
+
+    @GetMapping("checkReservation")
+    public Boolean checkTicketReservation(@RequestParam String flightCode, @RequestParam int seatNumber) {
+        return ticketService.checkReservation(Long.parseLong(flightCode), seatNumber);
+    }
 
 }
